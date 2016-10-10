@@ -12,7 +12,7 @@
 	</settings>
 
 	<plugins>  
-		<plugin interceptor="cn.com.hd.common.interceptor.PageInterceptor">  
+		<plugin interceptor="www.yllyx.superocr.common.interceptor.PageInterceptor">  
 			<property name="databaseType" value="mysql"/>  
 		</plugin>
 	</plugins> 

@@ -13,8 +13,8 @@
           class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="locations">
             <list>
-                <value>classpath:confg/jdbc.properties</value>
-                <value>classpath:confg/third-ocr.properties</value>
+                <value>classpath:config/jdbc.properties</value>
+                <value>classpath:config/third-ocr.properties</value>
             </list>
         </property>
         <property name="fileEncoding" value="UTF-8"></property>
@@ -99,7 +99,7 @@
 
     <!-- define the SqlSessionFactory, notice that configLocation is not needed when you use MapperFactoryBean -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />  
+        <property name="dataSource" ref="druid_dataSource" />  
         <property name="typeAliasesPackage" value="www.yllyx.superocr.domain" />
         <property name="configLocation" value="classpath:config/mybatis-config.xml" />
     </bean>
