@@ -8,4 +8,6 @@ import www.yllyx.superocr.common.util.ResponseEntityUtil;
 public interface IOcrService
 {
     public ResponseEntityUtil uploadOrcImg(LinkedList<FileMeta> imgFile);
+
+    public void ocrImg(LinkedList<FileMeta> files);
 }

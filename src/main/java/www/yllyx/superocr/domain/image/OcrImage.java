@@ -7,6 +7,10 @@ public class OcrImage {
 
     private Integer userId;
 
+    private Long size;
+
+    private String type;
+
     private byte[] file;
 
     public Integer getId() {
@@ -31,6 +35,22 @@ public class OcrImage {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public byte[] getFile() {

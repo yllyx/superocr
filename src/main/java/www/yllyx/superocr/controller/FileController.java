@@ -7,6 +7,7 @@ import java.util.LinkedList;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,11 +18,15 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import www.yllyx.superocr.common.domain.FileMeta;
+import www.yllyx.superocr.service.IOcrService;
 
 @Controller
 @RequestMapping("/controller")
 public class FileController
 {
+
+    @Autowired
+    IOcrService ocrService;
 
     LinkedList<FileMeta> files = new LinkedList<FileMeta>();
 
@@ -52,14 +57,18 @@ public class FileController
             mpf = request.getFile(itr.next());
             System.out.println(mpf.getOriginalFilename() + " uploaded! " + files.size());
 
-            // 2.2 if files > 10 remove the first from the list
+            // 2.2 if files > 10 call ocr ,then remove the first from the list
             if (files.size() >= 10)
+            {
+                ocrService.ocrImg(files);
                 files.pop();
+            }
 
             // 2.3 create new fileMeta
             fileMeta = new FileMeta();
             fileMeta.setFileName(mpf.getOriginalFilename());
             fileMeta.setFileSize(mpf.getSize() / 1024 + " Kb");
+            fileMeta.setSize(mpf.getSize());
             fileMeta.setFileType(mpf.getContentType());
 
             try

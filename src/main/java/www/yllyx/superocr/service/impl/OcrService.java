@@ -32,4 +32,10 @@ public class OcrService implements IOcrService
         return ocrLogic.uploadImg(imgFile);
     }
 
+    @Override
+    public void ocrImg(LinkedList<FileMeta> files)
+    {
+        ocrLogic.doOcr(files);
+    }
+
 }

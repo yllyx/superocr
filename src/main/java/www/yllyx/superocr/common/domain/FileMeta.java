@@ -9,9 +9,11 @@ public class FileMeta
 
     private String fileName;
 
-    private String fileSize;
+    private String fileSize;// 用于显示
 
     private String fileType;
+
+    private long size;// 文件实际大小
 
     private byte[] bytes;
 
@@ -53,5 +55,15 @@ public class FileMeta
     public void setBytes(byte[] bytes)
     {
         this.bytes = bytes;
+    }
+
+    public long getSize()
+    {
+        return size;
+    }
+
+    public void setSize(long size)
+    {
+        this.size = size;
     }
 }
