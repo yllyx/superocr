@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+<generatorConfiguration>  
+    <classPathEntry location="C:\Users\yulin\.m2\repository\mysql\mysql-connector-java\5.1.37\mysql-connector-java-5.1.37.jar" />  
+  
+    <context id="DB2Tables" targetRuntime="MyBatis3">  
+        <commentGenerator>  
+            <property name="suppressDate" value="false"/>  
+            <property name="suppressAllComments" value="true"/>  
+        </commentGenerator>  
+        
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
+                        connectionURL="jdbc:mysql://localhost:3306/superocr" userId="root"  
+                        password="root"/>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="www.yllyx.superocr.domain.image"  
+                            targetProject="F:\lyx\superocr\superocr\src\main\java\"/>
+        <!-- 生成映射文件的包名和位置-->  
+        <sqlMapGenerator targetPackage="www.yllyx.superocr.mapping.image" 
+                         targetProject="F:/lyx/superocr/superocr/src/main/resources/"/>  
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator targetPackage="www.yllyx.superocr.persistance.image"  
+                             targetProject="F:\lyx\superocr\superocr\src\main\java\"  
+                             type="XMLMAPPER"/>  
+        <table schema="superocr" tableName="ocr_image" domainObjectName="OcrImage"
+         enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+         enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table schema="superocr" tableName="ocr_result" domainObjectName="OcrResult"
+         enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+         enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table schema="superocr" tableName="ocr_result_error" domainObjectName="OcrResultError"
+         enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+         enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        
+    </context>  
+</generatorConfiguration>
