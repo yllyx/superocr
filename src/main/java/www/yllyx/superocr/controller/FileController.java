@@ -58,7 +58,7 @@ public class FileController
             System.out.println(mpf.getOriginalFilename() + " uploaded! " + files.size());
 
             // 2.2 if files > 10 call ocr ,then remove the first from the list
-            if (files.size() >= 10)
+            if (files.size() >= 1)
             {
                 ocrService.ocrImg(files);
                 files.pop();

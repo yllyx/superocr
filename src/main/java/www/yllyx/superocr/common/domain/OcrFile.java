@@ -80,6 +80,10 @@ public class OcrFile
 
     public String getExtra_str()
     {
+        if (extra_str == null)
+        {
+            return "";
+        }
         return extra_str;
     }
 
