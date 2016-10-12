@@ -108,21 +108,34 @@ public class HttpPostReq extends AbstractHttpRequest
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(this.url);
 
+        // 创建参数队列
+        // List<BasicNameValuePair> formparams = new ArrayList<BasicNameValuePair>();
+        //
+        // if (params != null && !params.isEmpty())
+        // {
+        // for (Object key : params.keySet())
+        // {
+        // formparams.add(new BasicNameValuePair((String)key, (String)params.get(key)));
+        // }
+        // }
+        // UrlEncodedFormEntity urlEntity = new UrlEncodedFormEntity(formparams, "UTF-8");
+
         MultipartEntityBuilder multipartEntity = MultipartEntityBuilder.create();
+        // multipartEntity.setCharset(Charset.forName(HTTP.UTF_8));// 设置请求的编码格式
 
         if (params != null && !params.isEmpty())
         {
             for (Object key : params.keySet())
             {
-                // multipartEntity.addPart((String)key,
-                // new StringBody((String)params.get(key), ContentType.APPLICATION_JSON));
-                ContentBody contentBody =
-                    new StringBody((String)params.get(key), ContentType.APPLICATION_JSON);
+                ContentBody contentBody = new StringBody((String)params.get(key),
+                    ContentType.MULTIPART_FORM_DATA.withCharset("UTF-8"));
                 FormBodyPart bodyPart = new FormBodyPart((String)key, contentBody);
                 multipartEntity.addPart(bodyPart);
             }
         }
         this.reqEntity = multipartEntity.build();
+        // urlEntity.setContentType("multipart/form-data");
+        // urlEntity.setContentEncoding("UTF-8");
         httpPost.setEntity(this.reqEntity);
         CloseableHttpResponse response = httpClient.execute(httpPost);
         HttpEntity responseEntity = response.getEntity();

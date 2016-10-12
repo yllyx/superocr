@@ -41,8 +41,8 @@ public class OcrLogic implements IOcrLogic
 
             // 调用ocr工具进行验证码识别
             OcrFile ocrFile = new OcrFile();
-            ocrFile.setUsername("yllyx");
-            ocrFile.setPassword("yllyx123");
+            ocrFile.setUsername("asd12307");
+            ocrFile.setPassword("asd12307");
             ocrFile.setTypeid("1002");
             ocrFile.setTimeout("1");
             ocrFile.setAuthor("yllyx");
