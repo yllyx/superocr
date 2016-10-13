@@ -43,12 +43,13 @@ public class OcrLogic implements IOcrLogic
             OcrFile ocrFile = new OcrFile();
             ocrFile.setUsername("asd12307");
             ocrFile.setPassword("asd12307");
-            ocrFile.setTypeid("1002");
+            ocrFile.setTypeid("1001");
             ocrFile.setTimeout("1");
             ocrFile.setAuthor("yllyx");
             ocrFile.setCustom("10");
             // ocrFile.setExtra_str(extra_str);
             ocrFile.setImage(file.getBytes());
+            ocrFile.setFilePath(file.getFilePath());
             String ret = "";
             try
             {

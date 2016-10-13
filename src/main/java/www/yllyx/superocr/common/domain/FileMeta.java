@@ -17,6 +17,8 @@ public class FileMeta
 
     private byte[] bytes;
 
+    private String filePath;
+
     public String getFileName()
     {
         return fileName;
@@ -65,5 +67,15 @@ public class FileMeta
     public void setSize(long size)
     {
         this.size = size;
+    }
+
+    public String getFilePath()
+    {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath)
+    {
+        this.filePath = filePath;
     }
 }

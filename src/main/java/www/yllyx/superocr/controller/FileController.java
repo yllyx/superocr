@@ -76,8 +76,9 @@ public class FileController
                 fileMeta.setBytes(mpf.getBytes());
 
                 // copy file to local disk (make sure the path "e.g. D:/temp/files" exists)
-                FileCopyUtils.copy(mpf.getBytes(),
-                    new FileOutputStream("D:/temp/files/" + mpf.getOriginalFilename()));
+                String filePath = "D:/temp/files/" + mpf.getOriginalFilename();
+                FileCopyUtils.copy(mpf.getBytes(), new FileOutputStream(filePath));
+                fileMeta.setFilePath(filePath);
 
             }
             catch (IOException e)

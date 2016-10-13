@@ -1,8 +1,6 @@
 package www.yllyx.superocr.common.util;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.http.client.ClientProtocolException;
 import org.apache.log4j.Logger;
@@ -25,17 +23,17 @@ public class ThirdOcrUtil
     {
         String url = thirdOcrUrl + "/upload";
         HttpPostReq httpPost = new HttpPostReq(url);
-        Map<Object, Object> params = new HashMap<Object, Object>();
-        params.put("username", ocrFile.getUsername());
-        params.put("password", ocrFile.getPassword());
-        params.put("author", ocrFile.getAuthor());
-        params.put("custom", ocrFile.getCustom());
-        params.put("extra_str", ocrFile.getExtra_str());
-        String image = new String(ocrFile.getImage());
-        params.put("image", image);
-        params.put("timeout", ocrFile.getTimeout());
-        params.put("typeid", ocrFile.getTypeid());
-        String ret = httpPost.HttpPostMultipartReq(params);
+        // Map<Object, Object> params = new HashMap<Object, Object>();
+        // params.put("username", ocrFile.getUsername());
+        // params.put("password", ocrFile.getPassword());
+        // params.put("author", ocrFile.getAuthor());
+        // params.put("custom", ocrFile.getCustom());
+        // params.put("extra_str", ocrFile.getExtra_str());
+        // String image = new String(ocrFile.getImage());
+        // params.put("image", image);
+        // params.put("timeout", ocrFile.getTimeout());
+        // params.put("typeid", ocrFile.getTypeid());
+        String ret = httpPost.HttpPostMultipartReq(ocrFile);
 
         return ret;
 

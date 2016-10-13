@@ -18,6 +18,8 @@ public class OcrFile
 
     private byte[] image;
 
+    private String filePath;
+
     public String getUsername()
     {
         return username;
@@ -100,5 +102,15 @@ public class OcrFile
     public void setImage(byte[] image)
     {
         this.image = image;
+    }
+
+    public String getFilePath()
+    {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath)
+    {
+        this.filePath = filePath;
     }
 }
