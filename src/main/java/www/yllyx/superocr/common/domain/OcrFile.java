@@ -20,6 +20,8 @@ public class OcrFile
 
     private String filePath;
 
+    private String fileName;
+
     public String getUsername()
     {
         return username;
@@ -112,5 +114,15 @@ public class OcrFile
     public void setFilePath(String filePath)
     {
         this.filePath = filePath;
+    }
+
+    public String getFileName()
+    {
+        return fileName;
+    }
+
+    public void setFileName(String fileName)
+    {
+        this.fileName = fileName;
     }
 }
